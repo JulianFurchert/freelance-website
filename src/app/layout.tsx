@@ -1,4 +1,6 @@
 import './globals.css'
+import { Footer } from '@/composites/Footer'
+import { Header } from '@/composites/Header'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +14,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className='flex flex-col min-h-screen'>
+          <Header />
+          <div className='flex-grow my-24 max-md:my-12 '>
+            {children}
+          </div>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }
