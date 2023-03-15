@@ -12,7 +12,7 @@ const linkClasses = {
   subtle: 'text-gray-700 hover:text-primary-700 active:text-primary-700',
 };
 
-export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
+export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props, ref){
   const { variant = 'default', ...rest } = props;
 
   const classes = classNames(
