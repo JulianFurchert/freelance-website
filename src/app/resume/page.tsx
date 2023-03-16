@@ -6,7 +6,7 @@ import { List, ListItem } from '@/components/List'
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="py-32">
       <div className='max-w-7xl'>
         <Headline>
           Julian Furchert
