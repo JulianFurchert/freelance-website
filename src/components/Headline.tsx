@@ -2,11 +2,12 @@ import React from 'react';
 import classNames from '../utils/classNames'
 
 type HeadlineProps = {
-  variant?: 'large' | 'medium' | 'small' | 'overline' ,
+  variant?: 'large' | 'medium' | 'small' | 'overline' | 'intro' ,
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
 }
 
 const headlineClasses = {
+  intro: 'text-8xl text-black font-semibold',
   large: 'text-5xl text-black font-semibold',
   medium: 'text-2xl text-black font-semibold',
   small: 'text-base leading-8 text-black font-semibold',
@@ -18,6 +19,7 @@ export const Headline = React.forwardRef<HTMLParagraphElement, HeadlineProps & R
 
     const classes = classNames(
       className,
+      [headlineClasses.intro, variant === 'intro'],
       [headlineClasses.large, variant === 'large'],
       [headlineClasses.medium, variant === 'medium'],
       [headlineClasses.small, variant === 'small'],

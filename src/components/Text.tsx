@@ -9,7 +9,7 @@ type TextProps = React.HTMLAttributes<HTMLParagraphElement> & {
 const textClasses = {
   base: 'text-gray-800',
   medium: 'text-base',
-  large: 'text-xl',
+  large: 'text-xl'
 };
 
 export const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
