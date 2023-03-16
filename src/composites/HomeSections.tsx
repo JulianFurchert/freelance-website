@@ -19,9 +19,9 @@ export const AboutSection: React.FC = () => {
   )
 
   return (
-    <motion.div ref={target} className="py-40">
+    <motion.div ref={target} className="py-48">
       <Container >
-        <motion.div className='flex justify-center' style={{ scale }}>
+        <motion.div className='flex justify-center'>
           <Headline as='h1' variant='intro' className="max-w-7xl">
             I’m a software engineer with a soft spot for design systems and user interfaces.
           </Headline>
@@ -46,10 +46,10 @@ export const SkillSection: React.FC = () => {
   )
 
   return (
-    <motion.div ref={target} className="py-40">
+    <motion.div ref={target} className="py-40 bg-[length:400%_400%] bg-gradient-to-r from-cyan-500 to-blue-500">
       <Container >
         <motion.div className='flex justify-center' >
-          <motion.div style={{ scale }}>
+          <motion.div>
             <Headline as='h1' variant='intro' className="max-w-7xl">
               I’m a software engineer with a soft spot for design systems and user interfaces.
             </Headline>

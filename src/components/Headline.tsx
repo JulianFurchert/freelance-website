@@ -7,7 +7,7 @@ type HeadlineProps = {
 }
 
 const headlineClasses = {
-  intro: 'text-8xl text-black font-semibold',
+  intro: 'text-7xl leading-tight text-black font-semibold',
   large: 'text-5xl text-black font-semibold',
   medium: 'text-2xl text-black font-semibold',
   small: 'text-base leading-8 text-black font-semibold',
