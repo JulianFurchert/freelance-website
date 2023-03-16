@@ -9,9 +9,6 @@ export const Header: React.FC = () => (
           Julian Furchert
         </Link>
         <div className='flex gap-5'>
-          <Link href="/work">
-            Work
-          </Link>
           <Link href="/resume">
             Resume
           </Link>
