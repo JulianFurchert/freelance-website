@@ -21,10 +21,10 @@ export const AboutSection: React.FC = () => {
   )
 
   return (
-      <motion.div ref={target} className="py-48">
+      <motion.div ref={target} className="py-40">
         <Container >
           <div className='flex justify-center relative'>
-            <Headline as='h1' variant='intro' className="max-w-7xl">
+            <Headline as='h1' variant='intro' className="max-w-[1200px]">
               I’m a software engineer with a soft spot for design systems and user interfaces.
             </Headline>
           </div>
@@ -34,11 +34,24 @@ export const AboutSection: React.FC = () => {
 }
 
 export const SkillSection: React.FC = () => {
+  const target = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: target,
+    offset: ["start start", "end start"],
+  });
+
+  const top = useTransform(
+    scrollYProgress,
+    [1, 0],
+    [0, 0]
+  )
+
   return (
-    <Container className="pb-48">
-      <div className='flex justify-center'>
+    <Container ref={target} className="pb-48">
+      <motion.div className='flex justify-center'>
         <Scene />
-      </div>
+      </motion.div>
     </Container>
   )
 }

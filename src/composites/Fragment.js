@@ -1,8 +1,6 @@
 "use client"
-import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
-import { GradientTexture } from "@react-three/drei";
 import { Color } from "three";
 
 const vertexShader = `
@@ -24,6 +22,7 @@ void main() {
   gl_Position = projectedPosition;
 }
 `
+
 const fragmentShader = `
 uniform vec3 u_colorA;
 uniform vec3 u_colorB;
@@ -37,7 +36,6 @@ void main() {
 `
 
 const MovingPlane = () => {
-  // This reference will give us direct access to the mesh
   const mesh = useRef();
 
   const uniforms = useMemo(
@@ -57,7 +55,9 @@ const MovingPlane = () => {
 
   return (
     <mesh ref={mesh} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1.5}>
-      <planeGeometry args={[1, 1, 16, 16]} />
+      <planeGeometry 
+        args={[1, 1, 16, 16]} 
+      />
       <shaderMaterial
         fragmentShader={fragmentShader}
         vertexShader={vertexShader}
