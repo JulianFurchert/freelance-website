@@ -1,10 +1,10 @@
-import { AboutSection, SkillSection, SystemSection, AnimationSection } from '@/composites/HomeSections'
+import { AboutSection, SkillSection, SystemSection, AnimationSection, InterfaceSection } from '@/composites/HomeSections'
 
 export default function Home() {
   return (
     <div>
       <AboutSection />
-      <SkillSection />
+      <InterfaceSection />
       <SystemSection />
       <AnimationSection />
     </div>

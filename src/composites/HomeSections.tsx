@@ -17,6 +17,60 @@ export const AboutSection: React.FC = () => {
   )
 }
 
+export const InterfaceSection: React.FC = () => {
+  const target = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: target,
+    offset: ["start center", "0.25 end"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log("scrollYProgress changed to", latest)
+  })
+
+  const width = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['80%', '100%']
+  )
+
+  const height = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['80%', '100%']
+  )
+
+  // useMotionValueEvent(y, "change", (latest) => {
+  //   console.log("top changed to", latest)
+  // })
+
+
+  return (
+    <div>
+      <div ref={target} className="relative" >   
+
+          <div className='sticky top-0 flex justify-center items-center w-full h-screen'>
+            <motion.div style={{width, height}} className='absolute bg-gray-900 rounded-xl w-4/5 h-4/5' />
+          </div>
+
+          <div className='sticky top-0 flex justify-center items-center w-full h-screen'>
+            <div className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl' />
+          </div>
+
+          <div className='sticky top-2 flex justify-center items-center w-full h-screen'>
+            <div className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl' />
+          </div>
+
+          <div className='sticky top-2 flex justify-center items-center w-full h-screen'>
+            <div className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl' />
+          </div>
+
+      </div>
+    </div>
+  )
+}
+
 export const SkillSection: React.FC = () => {
   const target = useRef(null);
 
