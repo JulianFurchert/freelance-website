@@ -6,7 +6,7 @@ import { motion, useInView, SVGMotionProps } from "framer-motion"
 export const InterfaceDashboard = React.forwardRef<SVGSVGElement, SVGMotionProps<SVGSVGElement>>(
   function Divider(props, ref){
     const _ref = useRef(null)
-    const isInView = useInView(_ref)
+    const isInView = useInView(_ref, { once: true, amount: 0.5 })
 
     const container = {
     hidden: {
