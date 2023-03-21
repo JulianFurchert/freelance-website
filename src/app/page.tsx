@@ -1,4 +1,4 @@
-import { AboutSection, SkillSection, SystemSection, AnimationSection, InterfaceSection } from '@/composites/HomeSections'
+import { AboutSection, SystemSection, AnimationSection, InterfaceSection } from '@/composites/HomeSections'
 
 export default function Home() {
   return (
