@@ -45,7 +45,7 @@ export const InterfaceBlog = React.forwardRef<SVGSVGElement, SVGMotionProps<SVGS
         <motion.svg variants={container} initial="hidden" animate={isInView ? 'show' : 'hidden'} ref={mergeRefs([_ref, ref])}  width="1512" height="982" viewBox="0 0 1512 982" fill="none" {...props}>
             <g id="Interface-Blog" clip-path="url(#clip0_10_24)">
                 <rect width="1512" height="982" fill="white"/>
-                <motion.circle variants={circle} id="background-ellipse" cx="1267.5" cy="936.5" r="743.5" fill="#F0F3F7"/>
+                <motion.circle variants={circle} id="background-ellipse" cx="1267.5" cy="936.5" r="743.5" fill="url('#gradient-circle')"/>
                 <rect id="menu" x="100" y="88" width="122" height="24" rx="12" fill="#E2E7F0"/>
                 
                 <g id="links">
@@ -85,8 +85,12 @@ export const InterfaceBlog = React.forwardRef<SVGSVGElement, SVGMotionProps<SVGS
             </g>
             <defs>
                 <clipPath id="clip0_10_24">
-                <rect width="1512" height="982" fill="white"/>
+                    <rect width="1512" height="982" fill="white"/>
                 </clipPath>
+                <linearGradient id="gradient-circle" gradientTransform="rotate(90)">
+                    <stop offset="0%"  stop-color="rgba(136, 85, 255, 0.1)"/>
+                    <stop offset="100%" stop-color="rgba(0, 204, 255, 0.2)"/>
+                </linearGradient>
             </defs>
         </motion.svg>
     )
