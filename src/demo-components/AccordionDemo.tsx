@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import { motion } from "framer-motion";
 
 export const AccordionDemo = () => (
   <Accordion.Root
@@ -32,7 +31,9 @@ export const AccordionDemo = () => (
   </Accordion.Root>
 );
 
-const AccordionItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+type AccordionItemRef = React.ElementRef<typeof Accordion.Item>
+
+const AccordionItem = React.forwardRef<AccordionItemRef, Accordion.AccordionItemProps>(({ children, className, ...props }, forwardedRef) => (
   <Accordion.Item
     className={classNames(
       'mt-px overflow-hidden border-b border-b-gray-300 first:mt-0 first:rounded-t-2xl last:rounded-b-2xl last:border-b-0',
@@ -45,7 +46,9 @@ const AccordionItem = React.forwardRef(({ children, className, ...props }, forwa
   </Accordion.Item>
 ));
 
-const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+type AccordionTriggerRef = React.ElementRef<typeof Accordion.AccordionTrigger>
+
+const AccordionTrigger = React.forwardRef<AccordionTriggerRef, Accordion.AccordionTriggerProps>(({ children, className, ...props }, forwardedRef) => (
   <Accordion.Header className="flex">
     <Accordion.Trigger
       className={classNames(
@@ -64,7 +67,9 @@ const AccordionTrigger = React.forwardRef(({ children, className, ...props }, fo
   </Accordion.Header>
 ));
 
-const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+type AccordionContentRef = React.ElementRef<typeof Accordion.Content>
+
+const AccordionContent = React.forwardRef<AccordionContentRef, Accordion.AccordionContentProps>(({ children, className, ...props }, forwardedRef) => (
   <Accordion.Content
     className={classNames(
       'text-mauve11 bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]',

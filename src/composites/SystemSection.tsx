@@ -21,14 +21,30 @@ export const SystemSection: React.FC = () => {
           </Headline>
         </div>
         <div>
-          <AccordionDemo />
-          <CardDemo />
-          <GalleryDemo />
-          <LoaderDemo />
-          <RadioGroupDemo />
-          <SliderDemo />
-          <SwitchDemo />
-          <TooltipDemo />
+          <div className='my-8'>
+            <AccordionDemo />
+          </div>
+          <div className='my-8'>
+            <RadioGroupDemo />
+          </div>
+          <div className='my-8'>
+            <CardDemo />
+          </div>
+          <div className='my-8'>
+            <GalleryDemo />
+          </div>
+          <div className='my-8'>
+            <LoaderDemo />
+          </div>
+          <div className='my-8'>
+            <SliderDemo />
+          </div>
+          <div className='my-8'>
+            <SwitchDemo />
+          </div>
+          <div className='my-8'>
+            <TooltipDemo />
+          </div>
         </div>
       </Container>
     </div>
