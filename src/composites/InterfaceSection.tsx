@@ -1,23 +1,9 @@
 "use client"
 import React, { useRef } from 'react'
-import { Container } from '@/components/Container'
-import { Headline } from '@/components/Headline'
 import { InterfaceDashboard } from '@/components/InterfaceDashboard'
 import { InterfaceBlog } from '@/components/InterfaceBlog'
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 // import { Scene } from './Fragment'
-
-export const AboutSection: React.FC = () => {
-  return (
-    <Container className="pb-40 pt-52">
-      <div className='flex justify-center relative'>
-        <Headline as='h1' variant='intro' className="max-w-[900px] text-center">
-          I’m a software engineer with a soft spot for design systems and user interfaces.
-        </Headline>
-      </div>
-    </Container>
-  )
-}
 
 export const InterfaceSection: React.FC = () => {
   const target = useRef(null);
@@ -103,31 +89,3 @@ export const InterfaceSection: React.FC = () => {
 //     </Container>
 //   )
 // }
-
-export const SystemSection: React.FC = () => {
-  return (
-    <div className='bg-gray-50'>
-      <Container className="py-56">
-        <div className='flex justify-center relative'>
-          <Headline as='h1' variant='intro' className="max-w-[900px] text-center">
-            I love to create design systems and component libraries.
-          </Headline>
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-export const AnimationSection: React.FC = () => {
-  return (
-    <div className='bg-gray-900'>
-      <Container className="py-56">
-        <div className='flex justify-center relative'>
-          <Headline as='h1' variant='intro' className="max-w-[900px] text-center text-white">
-            ... and animation and interaction that are to the point. 
-          </Headline>
-        </div>
-      </Container>
-    </div>
-  )
-}
