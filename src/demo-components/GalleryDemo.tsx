@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import { wrap } from "popmotion";
+import { ChevronLeft, ChevronRight } from 'react-feather';
 
 export const images = [
   "/images/gallery-image-2.jpg",
@@ -85,10 +86,10 @@ export const GalleryDemo = () => {
         />
       </AnimatePresence>
       <div className="absolute cursor-pointer bg-white top-1/2 h-7 w-7 flex justify-center items-center font-bold z-10 right-4 rounded-full" onClick={() => paginate(1)}>
-        {"‣"}
+        <ChevronRight className="text-gray-600" />
       </div>
       <div className="absolute cursor-pointer bg-white top-1/2 h-7 w-7 flex justify-center items-center font-bold z-10 left-4 rounded-full" onClick={() => paginate(-1)}>
-        {"‣"}
+        <ChevronLeft className="text-gray-600" />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export const SliderDemo = () => (
       step={1}
       aria-label="Volume"
     >
-      <Slider.Track className="bg-gray-50 relative grow rounded-full h-[3px]">
+      <Slider.Track className="bg-gray-300 relative grow rounded-full h-[3px]">
         <Slider.Range className="absolute bg-primary-700 rounded-full h-full" />
       </Slider.Track>
       <Slider.Thumb className="block w-5 h-5 bg-white rounded-[10px] hover:bg-violet3 focus:outline-none" />

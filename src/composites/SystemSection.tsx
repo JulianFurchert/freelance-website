@@ -9,7 +9,7 @@ import { LoaderDemo } from '@/demo-components/LoaderDemo'
 import { RadioGroupDemo } from '@/demo-components/RadioGroupDemo'
 import { SliderDemo } from '@/demo-components/SliderDemo'
 import { SwitchDemo } from '@/demo-components/SwitchDemo'
-import { TooltipDemo } from '@/demo-components/TooltipDemo'
+import { ButtonDemo } from '@/demo-components/ButtonDemo'
 
 export const SystemSection: React.FC = () => {
   return (
@@ -43,7 +43,7 @@ export const SystemSection: React.FC = () => {
             <SwitchDemo />
           </div>
           <div className='my-8'>
-            <TooltipDemo />
+            <ButtonDemo />
           </div>
         </div>
       </Container>
