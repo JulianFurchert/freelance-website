@@ -45,6 +45,10 @@ const MovingPlane = () => {
       },
       u_colorA: { value: new Color("#FFE486") },
       u_colorB: { value: new Color("#FEB3D9") },
+      // u_colorA: { value: new Color("#cea6f7") },
+      // u_colorB: { value: new Color("#c9d3fa") },
+      // u_colorA: { value: new Color("#e6d3d0") },
+      // u_colorB: { value: new Color("#e2c5d0") },
       // u_colorA: { value: new Color("#621c70") },
       // u_colorB: { value: new Color("#221c70") },
     }), []

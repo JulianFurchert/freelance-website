@@ -4,7 +4,7 @@ import { Text } from '@/components/Text'
 import { Divider } from '@/components/Divider'
 import { List, ListItem } from '@/components/List'
 
-export default function Home() {
+export default function Resume() {
   return (
     <Container className="py-32">
       <div className='max-w-7xl'>
