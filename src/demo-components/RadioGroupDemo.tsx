@@ -23,15 +23,12 @@ export const RadioGroupDemo = () => (
 );
 
 
-type RadioGroupItemRef = React.ElementRef<typeof RadioGroup.Item>
-
-const RadioGroupItem = React.forwardRef<RadioGroupItemRef, RadioGroup.RadioGroupItemProps>(({ children, className, ...props }, forwardedRef) => (
+const RadioGroupItem: React.FC<RadioGroup.RadioGroupItemProps> = ({ children, className, ...props }) => (
   <div  className={classNames('bg-white flex items-center p-4 border-b border-b-gray-300 last:border-b-0 first:rounded-t-2xl last:rounded-b-2xl', className)}>
     <RadioGroup.Item
       className="bg-white w-5 h-5 rounded-full shadow-[0_0_0_1px] focus:shadow-[0_0_0_1px] focus:shadow-black outline-none cursor-default"
       id="r3"
       {...props}
-      ref={forwardedRef}
     >
       <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-black" />
     </RadioGroup.Item>
@@ -39,4 +36,4 @@ const RadioGroupItem = React.forwardRef<RadioGroupItemRef, RadioGroup.RadioGroup
       {children}
     </label>
   </div>
-));
+);
