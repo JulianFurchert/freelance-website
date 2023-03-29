@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { InterfaceDashboard } from '@/components/InterfaceDashboard'
 import { InterfaceBlog } from '@/components/InterfaceBlog'
 import { motion, useScroll, useTransform } from "framer-motion"
-// import { Scene } from './Fragment'
+import { Scene } from './Fragment'
 
 export const InterfaceSection: React.FC = () => {
   const target = useRef(null);
@@ -35,7 +35,11 @@ export const InterfaceSection: React.FC = () => {
     <div>
       <div ref={target} className="relative" >   
           <div className='sticky top-0 flex justify-center items-center w-full h-screen'>
-            <motion.div style={{width, height, borderRadius}} className='absolute bg-gray-900 w-4/5 h-4/5' />
+            <motion.div style={{ width, height, borderRadius }} className='absolute bg-gray-900 w-4/5 h-4/5 lex justify-center items-center overflow-hidden'>
+              <div className='w-full h-screen'>
+                <Scene />
+              </div>
+            </motion.div>
           </div>
 
           <div className='sticky top-0 flex justify-center items-center w-full h-screen'>

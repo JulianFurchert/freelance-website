@@ -45,6 +45,8 @@ const MovingPlane = () => {
       },
       u_colorA: { value: new Color("#FFE486") },
       u_colorB: { value: new Color("#FEB3D9") },
+      // u_colorA: { value: new Color("#621c70") },
+      // u_colorB: { value: new Color("#221c70") },
     }), []
   );
 
@@ -70,7 +72,7 @@ const MovingPlane = () => {
 
   
 export const Scene = () => (
-    <Canvas style={{height: 800, width: 1200}} camera={{ position: [0.0, 0.3, 0.0] }}>
+    <Canvas style={{height: '100vh', width: '100vw'}} camera={{ position: [0.0, 0.3, 0.0] }}>
         <MovingPlane />
     </Canvas>
 )
