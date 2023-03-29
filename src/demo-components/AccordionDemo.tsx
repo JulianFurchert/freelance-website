@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronDown } from 'react-feather';
 
@@ -12,7 +11,9 @@ export const AccordionDemo = () => (
   >
     <AccordionItem value="item-1">
       <AccordionTrigger>Is it accessible?</AccordionTrigger>
-      <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+      <AccordionContent>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </AccordionContent>
     </AccordionItem>
 
     <AccordionItem value="item-2">
@@ -31,27 +32,19 @@ export const AccordionDemo = () => (
   </Accordion.Root>
 );
 
-const AccordionItem: React.FC<Accordion.AccordionItemProps> = ({ children, className, ...props }) => (
-  <Accordion.Item
-    className={classNames(
-      'mt-px overflow-hidden border-b border-b-gray-300 first:mt-0 first:rounded-t-2xl last:rounded-b-2xl last:border-b-0',
-      className
-    )}
+const AccordionItem: React.FC<Accordion.AccordionItemProps> = ({ children, ...props }) => (
+  <Accordion.Item 
+    className='mt-px overflow-hidden border-b border-b-gray-300 first:mt-0 first:rounded-t-2xl last:rounded-b-2xl last:border-b-0' 
     {...props}
   >
     {children}
   </Accordion.Item>
 );
 
-type AccordionTriggerRef = React.ElementRef<typeof Accordion.AccordionTrigger>
-
-const AccordionTrigger: React.FC<Accordion.AccordionTriggerProps> = ({ children, className, ...props }) => (
+const AccordionTrigger: React.FC<Accordion.AccordionTriggerProps> = ({ children, ...props }) => (
   <Accordion.Header className="flex">
-    <Accordion.Trigger
-      className={classNames(
-        'text-black group flex h-16 flex-1 cursor-pointer items-center justify-between bg-white px-6 text-lg font-semibold leading-none outline-none',
-        className
-      )}
+    <Accordion.Trigger 
+      className='text-black group flex h-16 flex-1 cursor-pointer items-center justify-between bg-white px-6 text-lg font-semibold leading-none outline-none' 
       {...props}
     >
       {children}
@@ -66,10 +59,7 @@ const AccordionTrigger: React.FC<Accordion.AccordionTriggerProps> = ({ children,
 
 const AccordionContent: React.FC<Accordion.AccordionContentProps> = ({ children, className, ...props }) => (
   <Accordion.Content
-    className={classNames(
-      'text-mauve11 bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]',
-      className
-    )}
+    className='text-mauve11 bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]' 
     {...props}
   >
     <div className="py-[15px] px-5">{children}</div>
