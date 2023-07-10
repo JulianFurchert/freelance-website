@@ -17,7 +17,7 @@ export const SystemSection: React.FC = () => {
       <Container className="py-56">
         <div className='flex justify-center relative'>
           <Headline as='h1' variant='intro' className="max-w-[900px] text-center">
-            I love to create design systems and component libraries.
+            I love to create component libraries to ensure consistent, high-quality user experiences.
           </Headline>
         </div>
         <div>
