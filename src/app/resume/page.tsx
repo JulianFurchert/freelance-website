@@ -12,7 +12,7 @@ export default function Resume() {
           Julian Furchert
         </Headline>
         <Text variant='large' className='my-9'>
-          As a software engineer with six years of experience, I have developed and designed user-friendly and visually appealing interfaces for various digital products. At Raytion, I’m the lead developer of a component library for search applications. I have a passion for user design systems, animation, and interaction design
+          Software engineer with more than 4 years of experience, specializing in React and Typescript. Passionate about user experience, design systems and interaction design. Driven by building and maintaining component libraries to ensure consistent, high-quality user experiences.
         </Text>
       </div>
 
