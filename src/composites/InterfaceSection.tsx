@@ -28,17 +28,17 @@ export const InterfaceSection: React.FC = () => {
   const borderRadius = useTransform(
     scrollYProgress,
     [0, 1],
-    ['32px', '0px']
+    ['32px', '32px']
   )
 
   return (
     <div>
       <div ref={target} className="relative" >   
-          <div className='sticky top-0 flex justify-center items-center w-full h-screen'>
-            <motion.div style={{ width, height, borderRadius }} className='absolute bg-gray-900 w-4/5 h-4/5 lex justify-center items-center overflow-hidden'>
-              <div className='w-full h-screen'>
-                <Scene />
-              </div>
+          <div className='sticky top-0 flex justify-center items-center w-full h-screen max-w-[1480px] py-16 mx-auto px-6 max-md:px-4'>
+            <motion.div style={{ width, height, borderRadius }} className='bg-gray-900 flex justify-center items-center overflow-hidden'>
+            <div className='w-full h-screen'>
+              <Scene />
+            </div>
             </motion.div>
           </div>
 
@@ -70,7 +70,7 @@ const Item: React.FC<ItemProp >= ({ children }) => {
   const scale = useTransform(
     scrollYProgress,
     [0, 1],
-    [0.9, 1]
+    [0.85, 1]
   )
   
   const y = useTransform(

@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { Container } from '@/components/Container'
 import { Headline } from '@/components/Headline'
 import { AccordionDemo } from '@/demo-components/AccordionDemo'
-import { CardDemo } from '@/demo-components/CardDemo'
+// import { CardDemo } from '@/demo-components/CardDemo'
 import { GalleryDemo } from '@/demo-components/GalleryDemo'
 import { LoaderDemo } from '@/demo-components/LoaderDemo'
 import { RadioGroupDemo } from '@/demo-components/RadioGroupDemo'
@@ -11,6 +11,7 @@ import { SliderDemo } from '@/demo-components/SliderDemo'
 import { SwitchDemo } from '@/demo-components/SwitchDemo'
 import { ButtonDemo } from '@/demo-components/ButtonDemo'
 import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion"
+import classNames from '../utils/classNames'
 
 const topLeft = '1 / 1 / 3 / 3'
 const topRight = '1 / 4 / 3 / 6'
@@ -38,24 +39,24 @@ export const SystemSection: React.FC = () => {
   });
 
   return (
-    <div ref={target}  className='bg-white py-[160px]'>
+    <div ref={target}  className='bg-white py-[100px]'>
       <Container className="bg-white">
         <div className="rounded-[32px] relative grid grid-rows-6 grid-cols-5 gap-3">
           <Item gridArea={center} scrollYProgress={scrollYProgress} offsetX={0} offsetY={0}>
             <Headline as='h1' variant='intro' className="max-w-[900px] text-center">
-              I love to create <br /> component libraries.
+              I love building <br /> component libraries ...
             </Headline>
           </Item>
-          <Item gridArea={topLeft} scrollYProgress={scrollYProgress} offsetX={-100} offsetY={-80}>
+          <Item gridArea={topLeft} className='rounded-tl-[40px]' scrollYProgress={scrollYProgress} offsetX={-100} offsetY={-80}>
             <GalleryDemo />
           </Item>
-          <Item gridArea={topRight} scrollYProgress={scrollYProgress} offsetX={120} offsetY={-40}>
+          <Item gridArea={topRight} className='rounded-tr-[40px]' scrollYProgress={scrollYProgress} offsetX={120} offsetY={-40}>
             <RadioGroupDemo />
           </Item>
-          <Item gridArea={bottomLeft} scrollYProgress={scrollYProgress} offsetX={-60} offsetY={60}>
+          <Item gridArea={bottomLeft} className='rounded-bl-[40px]' scrollYProgress={scrollYProgress} offsetX={-60} offsetY={60}>
             <AccordionDemo />
           </Item>
-          <Item gridArea={bottomRight} scrollYProgress={scrollYProgress} offsetX={50} offsetY={20}>
+          <Item gridArea={bottomRight} className='rounded-br-[40px]' scrollYProgress={scrollYProgress} offsetX={50} offsetY={20}>
             {/* <CardDemo /> */}
           </Item>
           <Item gridArea={centerTop} scrollYProgress={scrollYProgress} offsetX={0} offsetY={-100}>
@@ -76,15 +77,14 @@ export const SystemSection: React.FC = () => {
   )
 }
 
-type ItemProps = {
+type ItemProps = React.HTMLAttributes<HTMLDivElement> & {
   scrollYProgress: MotionValue<number>,
   offsetX: number,
   offsetY: number,
-  gridArea: string,
-  children?: React.ReactNode
+  gridArea: string
 }
 
-const Item: React.FC<ItemProps> = ({ scrollYProgress, offsetX, offsetY, gridArea, children }) => {
+const Item: React.FC<ItemProps> = ({ scrollYProgress, offsetX, offsetY, gridArea, children, className }) => {
   const target = useRef(null);
 
   const x = useTransform(
@@ -99,7 +99,7 @@ const Item: React.FC<ItemProps> = ({ scrollYProgress, offsetX, offsetY, gridArea
     [offsetY, 0]
   )
   return (
-    <motion.div ref={target} style={{gridArea }} className='bg-gray-100 flex justify-center items-center p-4 max-h-[320px]'>
+    <motion.div ref={target} style={{ gridArea }} className={classNames('bg-gray-100 flex justify-center items-center p-4 max-h-[320px]', className)}>
       <motion.div style={{ x, y }}  >
         {children}
       </motion.div>
