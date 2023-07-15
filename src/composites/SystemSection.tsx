@@ -10,7 +10,7 @@ import { RadioGroupDemo } from '@/demo-components/RadioGroupDemo'
 import { SliderDemo } from '@/demo-components/SliderDemo'
 import { SwitchDemo } from '@/demo-components/SwitchDemo'
 import { ButtonDemo } from '@/demo-components/ButtonDemo'
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
+import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion"
 
 const topLeft = '1 / 1 / 3 / 3'
 const topRight = '1 / 4 / 3 / 6'
@@ -25,9 +25,16 @@ const centerBottom = '5 / 3 / 7 / 4'
 export const SystemSection: React.FC = () => {
   const target = useRef(null);
 
-  const { scrollYProgress } = useScroll({
+  const scrollA= useScroll({
     target: target,
-    offset: ["start", "center"],
+    offset: ["start end", 0.7],
+    smooth: 10
+  });
+
+  const scrollYProgress = useSpring(scrollA.scrollYProgress, {
+    stiffness: 150,
+    damping: 40,
+    restDelta: 0.001
   });
 
   return (
@@ -36,10 +43,10 @@ export const SystemSection: React.FC = () => {
         <div className="rounded-[32px] relative grid grid-rows-6 grid-cols-5 gap-3">
           <Item gridArea={center} scrollYProgress={scrollYProgress} offsetX={0} offsetY={0}>
             <Headline as='h1' variant='intro' className="max-w-[900px] text-center">
-              I love to create design systems and component libraries.
+              I love to create <br /> component libraries.
             </Headline>
           </Item>
-          <Item gridArea={topLeft} scrollYProgress={scrollYProgress} offsetX={-40} offsetY={-80}>
+          <Item gridArea={topLeft} scrollYProgress={scrollYProgress} offsetX={-100} offsetY={-80}>
             <GalleryDemo />
           </Item>
           <Item gridArea={topRight} scrollYProgress={scrollYProgress} offsetX={120} offsetY={-40}>
@@ -78,6 +85,8 @@ type ItemProps = {
 }
 
 const Item: React.FC<ItemProps> = ({ scrollYProgress, offsetX, offsetY, gridArea, children }) => {
+  const target = useRef(null);
+
   const x = useTransform(
     scrollYProgress,
     [0, 1],
@@ -90,8 +99,10 @@ const Item: React.FC<ItemProps> = ({ scrollYProgress, offsetX, offsetY, gridArea
     [offsetY, 0]
   )
   return (
-    <motion.div style={{gridArea, x, y}} className='bg-gray-100 flex justify-center items-center p-4 max-h-[320px]'>
-      {children}
+    <motion.div ref={target} style={{gridArea }} className='bg-gray-100 flex justify-center items-center p-4 max-h-[320px]'>
+      <motion.div style={{ x, y }}  >
+        {children}
+      </motion.div>
     </motion.div>
   )
 }
