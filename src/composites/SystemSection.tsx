@@ -32,8 +32,8 @@ export const SystemSection: React.FC = () => {
   });
 
   const scrollYProgress = useSpring(scrollA.scrollYProgress, {
-    stiffness: 150,
-    damping: 40,
+    stiffness: 200,
+    damping: 120,
     restDelta: 0.001
   });
 
