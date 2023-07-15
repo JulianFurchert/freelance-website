@@ -38,7 +38,7 @@ export const SystemSection: React.FC = () => {
   });
 
   return (
-    <div ref={target}  className='bg-white py-[120px]'>
+    <div ref={target}  className='bg-white py-[160px]'>
       <Container className="bg-white">
         <div className="rounded-[32px] relative grid grid-rows-6 grid-cols-5 gap-3">
           <Item gridArea={center} scrollYProgress={scrollYProgress} offsetX={0} offsetY={0}>
@@ -81,7 +81,7 @@ type ItemProps = {
   offsetX: number,
   offsetY: number,
   gridArea: string,
-  children?: any
+  children?: React.ReactNode
 }
 
 const Item: React.FC<ItemProps> = ({ scrollYProgress, offsetX, offsetY, gridArea, children }) => {

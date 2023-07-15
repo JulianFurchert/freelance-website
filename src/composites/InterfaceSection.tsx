@@ -28,7 +28,7 @@ export const InterfaceSection: React.FC = () => {
   const borderRadius = useTransform(
     scrollYProgress,
     [0, 1],
-    ['40px', '0px']
+    ['32px', '0px']
   )
 
   return (
@@ -42,54 +42,48 @@ export const InterfaceSection: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className='sticky top-0 flex justify-center items-center w-full h-screen'>
-            <div className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl'>
-              <InterfaceDashboard className='w-full h-auto' />
-            </div>
-          </div>
+          <Item>
+            <InterfaceDashboard className='w-full h-auto' />
+          </Item>
 
-          <div className='sticky top-2 flex justify-center items-center w-full h-screen'>
-            <div className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl'>
-              <InterfaceBlog className='w-full h-auto' />
-            </div>
-          </div>
+          <Item>
+            <InterfaceBlog className='w-full h-auto' />
+          </Item>
       </div>
     </div>
   )
 }
 
-// export const SkillSection: React.FC = () => {
-//   const target = useRef(null);
+type ItemProp = {
+  children?: React.ReactNode
+}
 
-//   const { scrollYProgress } = useScroll({
-//     target: target,
-//     offset: ["start 500px", "center center"],
-//   });
 
-//   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-//     console.log("scrollYProgress changed to", latest)
-//   })
+const Item: React.FC<ItemProp >= ({ children }) => {
+  const target = useRef(null);
 
-//   const y = useTransform(
-//     scrollYProgress,
-//     [0, 1],
-//     [500, 0]
-//   )
+  const {scrollYProgress} = useScroll({
+    target: target,
+    offset: ["start end", "start start"],
+  })
 
-//   useMotionValueEvent(y, "change", (latest) => {
-//     console.log("top changed to", latest)
-//   })
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0.9, 1]
+  )
+  
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ['-30%', '0%', '0%']
+  )
 
-//   return (
-//     <Container>
-//       <div className="relative" ref={target} >
-//         <div className='flex justify-center items-center absolute inset-0 z-40'>
-//           <motion.div className='bg-white rounded-xl w-[900px] max-w-full h-4/6 mx-4' style={{ y }} />
-//         </div>
-//         <motion.div className='flex justify-center'>
-//           <Scene />
-//         </motion.div>
-//       </div>
-//     </Container>
-//   )
-// }
+  return (     
+    <div ref={target} className='sticky top-2 flex justify-center items-center w-full h-screen'>
+      <motion.div style={{ scale, y }} className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl'>
+        {children}
+      </motion.div>
+    </div>
+  )
+}
