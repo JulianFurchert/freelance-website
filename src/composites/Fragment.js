@@ -30,6 +30,7 @@ varying float vZ;
 
 
 void main() {
+  vec2 normalizedPixel = gl_FragCoord.xy/1000.0;
   vec3 color = mix(u_colorA, u_colorB, vZ * 2.0 + 0.5); 
   gl_FragColor = vec4(color, 1.0);
 }
@@ -43,12 +44,12 @@ const MovingPlane = () => {
       u_time: {
         value: 0.0,
       },
-      u_colorA: { value: new Color("#FFE486") },
-      u_colorB: { value: new Color("#FEB3D9") },
-      // u_colorA: { value: new Color("#cea6f7") },
-      // u_colorB: { value: new Color("#c9d3fa") },
-      // u_colorA: { value: new Color("#e6d3d0") },
-      // u_colorB: { value: new Color("#e2c5d0") },
+      u_colorA: { value: new Color("#111827") },
+      u_colorB: { value: new Color("#64748b") },
+      // u_colorA: { value: new Color("#0f172a") },
+      // u_colorB: { value: new Color("#6b7280") },
+      // u_colorA: { value: new Color("#6b7280") },
+      // u_colorB: { value: new Color("#9ca3af") },
       // u_colorA: { value: new Color("#621c70") },
       // u_colorB: { value: new Color("#221c70") },
     }), []
@@ -56,7 +57,7 @@ const MovingPlane = () => {
 
   useFrame((state) => {
     const { clock } = state;
-    mesh.current.material.uniforms.u_time.value = clock.getElapsedTime();
+    mesh.current.material.uniforms.u_time.value = clock.getElapsedTime() * 1;
   });
 
   return (

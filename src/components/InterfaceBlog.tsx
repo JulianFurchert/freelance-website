@@ -43,7 +43,7 @@ export const InterfaceBlog = React.forwardRef<SVGSVGElement, SVGMotionProps<SVGS
 
     return (
         <motion.svg variants={container} initial="hidden" animate={isInView ? 'show' : 'hidden'} ref={mergeRefs([_ref, ref])}  width="1512" height="982" viewBox="0 0 1512 982" fill="none" {...props}>
-            <g id="Interface-Blog" clip-path="url(#clip0_10_24)">
+            <g id="Interface-Blog" clipPath="url(#clip0_10_24)">
                 <rect width="1512" height="982" className="fill-white"/>
                 <motion.circle variants={circle} id="background-ellipse" cx="1267.5" cy="936.5" r="743.5" fill="url('#gradient-circle')"/>
                 <rect id="menu" x="100" y="88" width="122" height="24" rx="12" className="fill-gray-200"/>

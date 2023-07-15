@@ -28,7 +28,7 @@ export const InterfaceSection: React.FC = () => {
   const borderRadius = useTransform(
     scrollYProgress,
     [0, 1],
-    ['12px', '0px']
+    ['40px', '0px']
   )
 
   return (
