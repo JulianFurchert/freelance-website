@@ -63,21 +63,21 @@ export const InterfaceBlog = React.forwardRef<SVGSVGElement, SVGMotionProps<SVGS
                 <rect id="button" x="100" y="520" width="220" height="64" rx="32" className="fill-primary-700"/>
                 
                 <motion.g variants={card} id="card-3">
-                    <rect id="card-2-background" x="1116" y="584" width="300" height="264" rx="24" className="fill-white" fill-opacity="0.8"/>
+                    <rect id="card-2-background" x="1116" y="584" width="300" height="264" rx="24" className="fill-white" fillOpacity="0.8"/>
                     <rect id="card-2-text-1" x="1154" y="785" width="224" height="12" rx="6" className="fill-gray-200"/>
                     <rect id="card-2-text-2" x="1134" y="813" width="264" height="12" rx="6" className="fill-gray-200"/>
                     <rect id="card-2-image" x="1136" y="604" width="259" height="165" rx="24" className="fill-gray-200"/>
                 </motion.g>
 
                 <motion.g variants={card} id="card-2">
-                    <rect id="card-2-background_2" x="792" y="584" width="300" height="264" rx="24" className="fill-white" fill-opacity="0.8"/>
+                    <rect id="card-2-background_2" x="792" y="584" width="300" height="264" rx="24" className="fill-white" fillOpacity="0.8"/>
                     <rect id="card-2-text-1_2" x="830" y="785" width="224" height="12" rx="6" className="fill-gray-200"/>
                     <rect id="card-2-text-2_2" x="810" y="813" width="264" height="12" rx="6" className="fill-gray-200"/>
                     <rect id="card-2-image_2" x="812" y="604" width="259" height="165" rx="24" className="fill-gray-200"/>
                 </motion.g>
 
                 <motion.g variants={card} id="card-1">
-                    <rect id="card-1-background" x="468" y="584" width="300" height="264" rx="24" className="fill-white" fill-opacity="0.8"/>
+                    <rect id="card-1-background" x="468" y="584" width="300" height="264" rx="24" className="fill-white" fillOpacity="0.8"/>
                     <rect id="card-1-text-1" x="506" y="785" width="224" height="12" rx="6" className="fill-gray-200"/>
                     <rect id="card-1-text-2" x="486" y="813" width="264" height="12" rx="6" className="fill-gray-200"/>
                     <rect id="card-1-image" x="488" y="604" width="259" height="165" rx="24" className="fill-gray-200"/>
@@ -88,8 +88,8 @@ export const InterfaceBlog = React.forwardRef<SVGSVGElement, SVGMotionProps<SVGS
                     <rect width="1512" height="982" className="fill-white"/>
                 </clipPath>
                 <linearGradient id="gradient-circle" gradientTransform="rotate(90)">
-                    <stop offset="0%"  stop-color="rgba(136, 85, 255, 0.1)"/>
-                    <stop offset="100%" stop-color="rgba(0, 204, 255, 0.2)"/>
+                    <stop offset="0%"  stopColor="rgba(136, 85, 255, 0.1)"/>
+                    <stop offset="100%" stopColor="rgba(0, 204, 255, 0.2)"/>
                 </linearGradient>
             </defs>
         </motion.svg>
