@@ -11,8 +11,9 @@ module.exports = {
       sans: [ 'Inter', ...defaultTheme.fontFamily.sans ],
     },
     colors: {
-      gray: colors.zinc,
-      black: colors.zinc[900],
+      ...colors,
+      gray: colors.gray,
+      black: colors.gray[900],
       white: colors.white,
       primary: colors.indigo
     },

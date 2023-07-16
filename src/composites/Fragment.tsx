@@ -1,7 +1,8 @@
 "use client"
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { Color } from "three";
+import colors from "tailwindcss/colors";
 
 const vertexShader = `
 uniform float u_time;
@@ -36,22 +37,21 @@ void main() {
 }
 `
 
-const MovingPlane = () => {
-  const mesh = useRef();
+type Props = {
+  colorA: string,
+  colorB: string
+}
+
+const MovingPlane: React.FC<Props> = ({ colorA, colorB }) => {
+  const mesh = useRef<any>();
 
   const uniforms = useMemo(
     () => ({
       u_time: {
         value: 0.0,
       },
-      u_colorA: { value: new Color("#111827") },
-      u_colorB: { value: new Color("#64748b") },
-      // u_colorA: { value: new Color("#0f172a") },
-      // u_colorB: { value: new Color("#6b7280") },
-      // u_colorA: { value: new Color("#6b7280") },
-      // u_colorB: { value: new Color("#9ca3af") },
-      // u_colorA: { value: new Color("#621c70") },
-      // u_colorB: { value: new Color("#221c70") },
+      u_colorA: { value: new Color(colorA) },
+      u_colorB: { value: new Color(colorB) },
     }), []
   );
 
@@ -76,8 +76,8 @@ const MovingPlane = () => {
 };
 
   
-export const Scene = () => (
+export const Scene: React.FC<Props> = ( props ) => (
     <Canvas style={{height: '100vh', width: '100vw'}} camera={{ position: [0.0, 0.3, 0.0] }}>
-        <MovingPlane />
+        <MovingPlane {...props} />
     </Canvas>
 )

@@ -4,6 +4,7 @@ import { InterfaceDashboard } from '@/components/InterfaceDashboard'
 import { InterfaceBlog } from '@/components/InterfaceBlog'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Scene } from './Fragment'
+import colors from "tailwindcss/colors";
 
 export const InterfaceSection: React.FC = () => {
   const target = useRef(null);
@@ -35,9 +36,9 @@ export const InterfaceSection: React.FC = () => {
     <div>
       <div ref={target} className="relative" >   
           <div className='sticky top-0 flex justify-center items-center w-full h-screen max-w-[1480px] py-16 mx-auto px-6 max-md:px-4'>
-            <motion.div style={{ width, height, borderRadius }} className='bg-gray-900 flex justify-center items-center overflow-hidden'>
+            <motion.div style={{ width, height, borderRadius }} className='bg-violet-200 flex justify-center items-center overflow-hidden'>
             <div className='w-full h-screen'>
-              <Scene />
+              <Scene colorA={colors.violet[200]} colorB={colors.indigo[200]}/>
             </div>
             </motion.div>
           </div>
@@ -81,7 +82,7 @@ const Item: React.FC<ItemProp >= ({ children }) => {
 
   return (     
     <div ref={target} className='sticky top-2 flex justify-center items-center w-full h-screen'>
-      <motion.div style={{ scale, y }} className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full h-4/6 mx-4 shadow-2xl'>
+      <motion.div style={{ scale, y }} className='bg-white border-gray-900 rounded-xl w-[900px] max-w-full overflow-hidden mx-4 shadow-2xl'>
         {children}
       </motion.div>
     </div>

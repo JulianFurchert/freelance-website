@@ -4,7 +4,8 @@ import { Container } from '@/components/Container'
 import { Headline } from '@/components/Headline'
 import { Heart } from 'react-feather';
 import { Scene } from './Fragment'
-import { motion, AnimatePresence, useInView } from "framer-motion"
+import { useInView } from "framer-motion"
+import colors from "tailwindcss/colors";
 
 const items = [
   {
@@ -44,7 +45,7 @@ export const AnimationSection: React.FC = () => {
       <Container ref={_ref} className="h-screem my-16">
         <div className=' relative flex justify-center bg-gray-900 min-h-[80vh] items-center rounded-[40px] overflow-hidden'>
             <div className='w-full h-screen absolute'>
-              <Scene />
+              <Scene colorA={colors.gray[600]} colorB={colors.gray[800]} />
             </div>
             <Headline as='h1' variant='intro' className="z-20 max-w-[900px] text-center text-white">
               ... and animations and interactions to enhance user experiences.
