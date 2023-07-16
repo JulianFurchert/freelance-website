@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 export const images = [
+  "/images/gallery-image-4.jpg",
   "/images/gallery-image-2.jpg",
   "/images/gallery-image-3.jpg",
-  "/images/gallery-image-4.jpg"
 ];
 
 const variants = {

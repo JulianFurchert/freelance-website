@@ -36,9 +36,9 @@ export const InterfaceSection: React.FC = () => {
     <div>
       <div ref={target} className="relative" >   
           <div className='sticky top-0 flex justify-center items-center w-full h-screen max-w-[1480px] py-16 mx-auto px-6 max-md:px-4'>
-            <motion.div style={{ width, height, borderRadius }} className='bg-violet-200 flex justify-center items-center overflow-hidden'>
+            <motion.div style={{ width, height, borderRadius }} className='bg-indigo-200 flex justify-center items-center overflow-hidden'>
             <div className='w-full h-screen'>
-              <Scene colorA={colors.violet[200]} colorB={colors.indigo[200]}/>
+              <Scene colorA={colors.violet[100]} colorB={colors.indigo[100]}/>
             </div>
             </motion.div>
           </div>
