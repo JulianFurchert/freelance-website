@@ -38,14 +38,17 @@ export const AnimationSection: React.FC = () => {
     const animation = async () => {
       console.log({isInView})
       animate(scope.current, { opacity: 1 })
-      animate('path', { strokeDashoffset: 0 }, {delay: 0.1, duration: 0.8})
+      await animate('#outline', { strokeDashoffset: 0 }, {delay: 0.1, duration: 0.8})
+      animate('#fill', { opacity: 1 })
+      animate('#fill', { scale: 1 }, { type: 'spring' })
     }
     
     if(isInView){
       animation()
     } else {
       animate(scope.current, { opacity: 0 })
-      animate('path', { strokeDashoffset: 100 })
+      animate('#outline', { strokeDashoffset: 100 })
+      animate('#fill', { scale: 0.1, opacity: 0 })
     }
     }, [isInView])
 
@@ -60,7 +63,8 @@ export const AnimationSection: React.FC = () => {
               ... and animations and interactions to enhance user experiences.
               <span ref={scope} style={{opacity: 0}} className='inline-flex self-center'>
                 <svg className="h-[1em] w-[1em] color-current relative top-[.125em] ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path stroke-dasharray={100} stroke-dashoffset={100} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  <path id="outline" stroke-dasharray={100} stroke-dashoffset={100} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  <motion.path id="fill" fill="currentColor" style={{ scale: 0.1 }} opacity={0} stroke-dasharray={100} stroke-dashoffset={100} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></motion.path>
                 </svg>
               </span>
             </Headline>
